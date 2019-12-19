@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+
+<head>
+    <title>BITM</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="r1">
+            <span> <img src="img/logo.png" style="width:200px; height: 110px;"> </span>
+            <span> <img src="img/basis_logo.png" style="width:150px; height: 100px; float:right; padding-top: 50px;">
+            </span></div>
+
+        <nav id="primary_nav_wrap">
+            <ul>
+                <li><a href="#">HOME </a> </li>
+                <li><a href="#">SEIP TRAINING</a>
+                    <ul>
+                        <li><a href="#">OVERVIEW OF SEIP</a></li>
+                        <li><a href="#">COURSE WISE DETAILS</a></li>
+                        <li><a href="#">COURSES OUTLINE</a></li>
+                        <li><a href="#">ADMISSION PROCESS OF SEIP</a>
+                            <li><a href="#">REGISTRATION ONLINE</a></li>
+
+                    </ul>
+        </nav>
+
+
+
+        <h1 style="color:  #003399; border-bottom: 1px solid #336600;">Registration for SEIP Project</h1>
+        <form action="/action_page.php" method="post" name="myForm" onsubmit="return validateform()">
+            <p>Select Course:(One person will be eligible for one course only)</p>
+            <div class="row">
+                <div class="col-15">
+                    <label> First Preference*:</label></div>
+                <div class="col-85">
+                    <select name="bitm">
+                        <option value="select_course">Select Course</option>
+                        <option value="web_design">Web design</option>
+                        <option value="gd">Graphics design</option>
+                        <option value="wdev">Development</option>
+                        <option value="seo">SEO</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-15">
+                    <label> Second Preference*:</label></div>
+                <div class="col-85">
+                    <select name="bitm">
+                        <option value="select_course">Select Course</option>
+                        <option value="web_design">Web design</option>
+                        <option value="gd">Graphics design</option>
+                        <option value="wdev">Development</option>
+                        <option value="seo">SEO</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-15">
+                    <label> Third Preference*:</label></div>
+                <div class="col-85">
+                    <select name="bitm">
+                        <option value="select_course">Select Course</option>
+                        <option value="web_design">Web design</option>
+                        <option value="gd">Graphics design</option>
+                        <option value="wdev">Development</option>
+                        <option value="seo">SEO</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+
+                <label> Name*:</label>
+
+                <input type="text" name="Name" style="display: block; margin: 5px;">
+            </div>
+            <div class="row">
+                <div class="row-1">
+                    <label> Father Name:</label>
+                    <input type="text" name="Name" style="display: inline-block; margin: 5px;">
+                </div>
+                <div class="row-1">
+                    <label> Mother Name:</label>
+                    <input type="text" name="Name" style="display: inline-block; margin: 5px;">
+                </div>
+                <div class="row-1">
+                    <label> Gender:</label>
+                    <select name="gender">
+                        <option value="select_gender">Select Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+
+                    </select>
+                </div>
+            </div>
+            <div class="row" style="float: left;">
+
+                <label> National ID:</label>
+
+                <input type="text" name="Number" id="numloc" style="display: block; margin: 5px;">
+            </div>
+
+            <div class="row">
+                <div class="row-1">
+                    <label> Date of Birth:*</label>
+                    <input type="text" name="Number" id="numloc" style="display: inline-block; margin: 5px;">
+                </div>
+                <div class="row-1">
+                    <label> Religion:*</label>
+                    <select name="gender">
+                        <option value="select_gender">Select Religion</option>
+                        <option value="male">Islam</option>
+                        <option value="female">Hindu</option>
+                        <option value="others">Buddhest</option>
+                    </select>
+                </div>
+                <div class="row-1">
+                    <label> Ethnic Group:*</label>
+                    <select name="gender">
+                        <option value="select_gender">Select Religion</option>
+                        <option value="male">Islam</option>
+                        <option value="female">Hindu</option>
+                        <option value="others">Buddhest</option>
+                    </select>
+                </div>
+            </div>
+
+
+            <div class="row" style="float: left;">
+                <div class="row-2">
+                    <label> Mobile:*</label>
+                    <input type="text" name="Number" id="numloc" required style="display: inline-block; margin: 5px;">
+                </div>
+                <div class="row-2">
+                    <label> Email:*</label>
+                    <input type="email" name="Email" required style="display: inline-block; margin: 5px;">
+                </div>
+
+
+
+                <br>
+
+                <input type="submit" value="submit">
+
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function validateform() {
+            var name = document.myform.Name.value;
+            var number = document.myform.Number.value;
+            var email = document.myform.Email.value;
+
+            var num = document.myform.Number.value;
+            if (name == null || name == "") {
+                alert("Name can't be blank");
+                return false;
+            }
+
+
+
+            if (isNaN(num)) {
+                document.getElementById("numloc").innerHTML = "Enter Numeric value only";
+                return false;
+            }
+
+            if (email == null || email == "") {
+                alert("Email can't be blank");
+                return false;
+            }
+        }
+    </script>
+</body>
+
+</html>
